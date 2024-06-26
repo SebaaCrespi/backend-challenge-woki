@@ -43,9 +43,9 @@ export class TaskController {
         res.status(404).json({ message: 'Task not found' });
         return;
       }
-      const projectExist = await this.projectService.getProjectById(req.body.project);
-      const userExist = req.body?.user  ? await this.userService.getUserById(req.body.user) : null;
-      if (projectExist || userExist) {
+      const user = req.body?.assignedTo  ? await this.userService.getUserById(req.body.assignedTo) : null;
+      const project  = await this.projectService.getProjectById(req.body.project);
+      if (!project || !user) {
         res.status(404).json({ message: 'Project or User not founded' });
         return;
       }

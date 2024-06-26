@@ -16,6 +16,10 @@ export class UserService {
     return this.userRepository.findById(id);
   }
 
+  async updateUser(id: string, user : User): Promise<User | null>{
+    return this.userRepository.update(id, user);
+  }
+
   async deleteUser(id: string): Promise<void> {
     await this.userRepository.deleteById(id);
   }

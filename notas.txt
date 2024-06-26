@@ -77,7 +77,7 @@ project-root/
 
 
 
-
+Create, read, update, and delete. The API should support the above operations using the appropriate HTTP methods (e.g. 	GET, POST, PUT, DELETE). Tasks should have a title, description, due date, and status (not started, in progress, completed)
 Cambiar en los Repositories y mappers la lógica de las relaciones:
 Un projecto no tiene relación directa con ninguna entidad
 
@@ -93,4 +93,15 @@ TERMINAR UPDATE DE TASK
 Validar con middleware campos al crear y actualizar entidades
 
 Users should be able to retrieve a list of projects they are a part of, filtered by status
+
+
+{  "_id": "667b63cd27f20f413985c190",
+	"title": "CRUD operations for tasks",  
+	"description": "Create, read, update, and delete. The API should support the above operations using the appropriate HTTP methods (e.g. 	GET, POST, PUT, DELETE). Tasks should have a title, description, due date, and status (not started, in progress, completed)",  
+	"dueDate": "2024-06-26T00:00:00.000+00:00",  
+	"status": "not started",  
+	"project": "667a5788949fad80de52ed68",  
+	"createdAt": "2024-06-25T06:28:46.096+00:00",  
+	"updatedAt": "2024-06-25T06:28:46.096+00:00"  
+}
 Users should be able to retrieve a list of tasks they are assigned to, filtered by status

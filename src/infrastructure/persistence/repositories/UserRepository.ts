@@ -30,6 +30,13 @@ export class UserRepository implements IUserRepository {
     return userDocs.map(UserMapper.toUser);
   }
 
+  async update(id: string, user: User): Promise<User | null>{
+      const userDoc = await UserModel.findOneAndUpdate({_id : id}, user).exec();
+      console.log(userDoc);
+      if (!userDoc) return null;
+      return UserMapper.toUser(userDoc);
+  }
+
   async deleteById(id: string): Promise<void> {
     await UserModel.findByIdAndDelete(id).exec();
   }

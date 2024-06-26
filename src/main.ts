@@ -4,7 +4,7 @@ import projectRouter from './interface/http/routes/projectRoutes';
 import userRouter from './interface/http/routes/userRoutes';
 import taskRouter from './interface/http/routes/taskRoutes';
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3333;
 
 const app = express();
 app.use(express.json());
