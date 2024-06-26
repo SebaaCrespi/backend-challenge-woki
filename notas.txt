@@ -86,14 +86,14 @@ Una Task tiene relación con el projecto 1 a 1
 Un usuario tiene una relación muchos a 1 con el proyecto 
 (un usuario tiene un listado de proyectos)
 
-trycatchs 
-puts (project ya tiene)
+trycatchs f
+puts (project ya tiene) v
 
-TERMINAR UPDATE DE TASK
-Validar con middleware campos al crear y actualizar entidades
+TERMINAR UPDATE DE TASK v
+Validar con middleware campos al crear y actualizar entidades f
 
-Users should be able to retrieve a list of projects they are a part of, filtered by status
-
+Users should be able to retrieve a list of projects they are a part of, filtered by status f
+Users should be able to retrieve a list of tasks they are assigned to, filtered by status  f
 
 {  "_id": "667b63cd27f20f413985c190",
 	"title": "CRUD operations for tasks",  
@@ -104,4 +104,3 @@ Users should be able to retrieve a list of projects they are a part of, filtered
 	"createdAt": "2024-06-25T06:28:46.096+00:00",  
 	"updatedAt": "2024-06-25T06:28:46.096+00:00"  
 }
-Users should be able to retrieve a list of tasks they are assigned to, filtered by status

@@ -3,6 +3,7 @@ import { User } from "../../../domain/models/User";
 import { IUserRepository } from "../../../domain/repositories/IUserRepository";
 import UserModel from "../schemas/UserModel";
 import { hashPassword } from "../../utilts/passwordUtils";
+import { ObjectId } from "mongodb";
 
 
 export class UserRepository implements IUserRepository {
@@ -32,7 +33,6 @@ export class UserRepository implements IUserRepository {
 
   async update(id: string, user: User): Promise<User | null>{
       const userDoc = await UserModel.findOneAndUpdate({_id : id}, user).exec();
-      console.log(userDoc);
       if (!userDoc) return null;
       return UserMapper.toUser(userDoc);
   }

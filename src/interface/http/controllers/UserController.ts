@@ -34,19 +34,7 @@ export class UserController {
         res.status(404).json({ message: 'User not found' });
         return;
       }
-      /* let projectFound : Object | null = null;
-       await req.body?.projects.forEach( async (project : Project) => {
-        console.log('entré');
-        let p = await this.projectService.getProjectById(project._id);
-        if(!p){
-          projectFound = { id: project._id, exist: false };
-        }
-      })      
-      if (!projectFound && projectFound?.exist) {
-        res.status(404).json({ message: 'Project with id: '+project.id+' not founded' });
-        return;
-      } */
-
+      
       const userUpdated = await this.userService.updateUser(req.params.id, req.body);
 
       res.status(200).json(userUpdated);
