@@ -1,0 +1,96 @@
+project-root/
+│
+├── src/
+│   ├── application/
+│   │   ├── events/
+│   │   │   ├── UserRegisteredEvent.ts
+│   │   │   ├── TaskCreatedEvent.ts
+│   │   │   └── ProjectUpdatedEvent.ts
+│   │   └── services/
+│   │       ├── UserService.ts
+│   │       ├── TaskService.ts
+│   │       └── ProjectService.ts
+│   │
+│   ├── domain/
+│   │   ├── events/
+│   │   │   ├── UserDomainEvent.ts
+│   │   │   ├── TaskDomainEvent.ts
+│   │   │   └── ProjectDomainEvent.ts
+│   │   ├── models/
+│   │   │   ├── User.ts
+│   │   │   ├── Task.ts
+│   │   │   └── Project.ts
+│   │   ├── repositories/
+│   │   │   ├── UserRepository.ts
+│   │   │   ├── TaskRepository.ts
+│   │   │   └── ProjectRepository.ts
+│   │   └── services/
+│   │       ├── UserDomainService.ts
+│   │       ├── TaskDomainService.ts
+│   │       └── ProjectDomainService.ts
+│   │
+│   ├── infrastructure/
+│   │   ├── events/
+│   │   │   ├── EventBus.ts
+│   │   │   ├── EventHandler.ts
+│   │   │   └── EventListener.ts
+│   │   ├── persistence/
+│   │   │   ├── mongoose/
+│   │   │   │   ├── schemas/
+│   │   │   │   │   ├── UserSchema.ts
+│   │   │   │   │   ├── TaskSchema.ts
+│   │   │   │   │   └── ProjectSchema.ts
+│   │   │   │   ├── UserModel.ts
+│   │   │   │   ├── TaskModel.ts
+│   │   │   │   └── ProjectModel.ts
+│   │   │   ├── repositories/
+│   │   │   │   ├── MongoUserRepository.ts
+│   │   │   │   ├── MongoTaskRepository.ts
+│   │   │   │   └── MongoProjectRepository.ts
+│   │   └── mappers/
+│   │       ├── UserMapper.ts
+│   │       ├── TaskMapper.ts
+│   │       └── ProjectMapper.ts
+│   │
+│   ├── interfaces/
+│   │   ├── http/
+│   │   │   ├── controllers/
+│   │   │   │   ├── UserController.ts
+│   │   │   │   ├── TaskController.ts
+│   │   │   │   └── ProjectController.ts
+│   │   │   ├── routes/
+│   │   │   │   ├── userRoutes.ts
+│   │   │   │   ├── taskRoutes.ts
+│   │   │   │   └── projectRoutes.ts
+│   │   │   └── middlewares/
+│   │   │       └── authMiddleware.ts
+│   │   └── cli/
+│   │       └── cliCommands.ts
+│   │
+│   └── app.ts
+│
+├── package.json
+├── tsconfig.json
+├── .env
+└── .gitignore
+
+
+
+
+
+Cambiar en los Repositories y mappers la lógica de las relaciones:
+Un projecto no tiene relación directa con ninguna entidad
+
+Una Task tiene relación con el projecto 1 a 1
+
+Un usuario tiene una relación muchos a 1 con el proyecto 
+(un usuario tiene un listado de proyectos)
+
+trycatchs 
+puts (project ya tiene)
+
+TERMINAR UPDATE DE TASK
+Validar con middleware campos al crear y actualizar entidades
+
+Users should be able to retrieve a list of projects they are a part of, filtered by status
+Users should be able to retrieve a list of tasks they are assigned to, filtered by status
