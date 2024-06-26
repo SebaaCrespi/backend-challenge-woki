@@ -3,8 +3,10 @@ import { connectDB } from './infrastructure/persistence/config/dbConfig';
 import projectRouter from './interface/http/routes/projectRoutes';
 import userRouter from './interface/http/routes/userRoutes';
 import taskRouter from './interface/http/routes/taskRoutes';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
